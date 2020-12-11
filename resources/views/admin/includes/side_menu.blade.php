@@ -8,12 +8,12 @@
                 </li>
                 <li>
                     <a href="#">
-                        <span><i class="fa fa-institution"></i>Menu</span>
+                        <span><i class="fa fa-institution"></i>Enquiry</span>
                     </a>
                     <ul>
                         <li>
-                            <a href="#">Submenu 1</a>
-                            <a href="#">Submenu 2</a>
+                            <a href="{{ route('enquiry.index') }}">All Enquiries</a>
+                            <a href="{{ route('enquiry.notreplied') }}">Unanswered Enquiries</a>
                         </li>
                     </ul>
                 </li>

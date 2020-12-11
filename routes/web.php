@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,6 +17,23 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+/**Admin Login Needed */
 Route::get('dashboard', function () {
     return view('admin.index');
 })->name('admin.dashboard');
+
+/***
+ * Admin Panel Routing start
+ */
+Route::get('enquiry/index',[App\Http\Controllers\admin\EnquiryController::class, 'index'])->name('enquiry.index');
+Route::get('enquiry/unseen-messages',[App\Http\Controllers\admin\EnquiryController::class, 'notreplied'])->name('enquiry.notreplied');
+Route::get('enquiry/reply/{id}',[App\Http\Controllers\admin\EnquiryController::class, 'reply'])->name('enquiry.reply');
+Route::get('enquiry/show/{id}',[App\Http\Controllers\admin\EnquiryController::class, 'show'])->name('enquiry.show');
+Route::post('enquiry/update/{id}',[App\Http\Controllers\admin\EnquiryController::class, 'update'])->name('enquiry.update');
+
+//Route::post('raise-enquiry/',[App\Http\Controllers\admin\EnquiryController::class, 'store'])->name('enquiry.raise');
+
+/**
+ * Admin Panel Routing End
+ */

@@ -141,7 +141,7 @@
     <script src="{{ asset('admin-assets/js/jquery.pwdMeter.js') }}" language="javascript"></script>
     <script src="{{ asset('admin-assets/js/clipboard.min.js') }}"></script>
     <script src="{{ asset('admin-assets/js/trigger.js') }}"></script>
-    {{-- <script src="{{ asset('admin-assets/js/tooltips.js') }}"></script> --}}
+    {{-- <script src="{{ asset('admin-assets/js/ckeditor.js') }}"></script> --}}
     <script src="{{ asset('admin-assets/js/jquery-ui.js') }}" type="text/javascript"></script>
     <script src="//cdn.ckeditor.com/4.13.0/full-all/ckeditor.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
@@ -161,6 +161,9 @@
         clipboard.on("error", function (e) {
             console.log(e);
         });
+    </script>
+    <script>
+        CKEDITOR.replace( 'editor1' );
     </script>
 </body>
 </html>

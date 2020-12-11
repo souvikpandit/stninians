@@ -35,10 +35,10 @@ left: 0;
 top: 0;
 -webkit-transform: inherit;
 transform: inherit;
-margin: 0; 
+margin: 0;
 }
 .auth-container .auth-content {
-padding: 30px 25px; } 
+padding: 30px 25px; }
 }
 
 .fileUpload {
@@ -330,14 +330,14 @@ table.dataTable.dtr-inline.collapsed tbody tr.child td:first-child{position:rela
 .item-details .col-lg-9{ width:70%}
 .item-details .col-lg-3{ width:30%}
 #sortable.grid li{ width:20%}
-} 
+}
 
 @media (min-width: 1200px) and (max-width: 1299px) {
 .jFiler-items-grid .jFiler-item { width:20%}
 .item-details .col-lg-9{ width:70%}
 .item-details .col-lg-3{ width:30%}
 #sortable.grid li{ width:25%}
-} 
+}
 
 @media (min-width: 992px) and (max-width: 1199px) {
 .wrapper{ padding-left:30px; padding-right:30px;}
@@ -349,7 +349,7 @@ table.dataTable.dtr-inline.collapsed tbody tr.child td:first-child{position:rela
 .media-table table > thead > tr > th:nth-child(3), .media-table table > tbody > tr > td:nth-child(5){width:auto}
 #sortable.grid li{ width:33.333%}
 .content-box.content-box-img{ padding:10px;}
-} 
+}
 /* END__ */
 
 @media (min-width: 768px) and (max-width: 991px) {
@@ -362,7 +362,7 @@ body.noscroll:before{ content:''; position:fixed; top:0; left:0; bottom:0; right
 #page-sidebar.active {left: 200px; width: 200px; -webkit-transition: all 0.4s ease 0s; -moz-transition: all 0.4s ease 0s; -ms-transition: all 0.4s ease 0s; -o-transition: all 0.4s ease 0s; transition: all 0.4s ease 0s; z-index:996 }
 .header-link li a strong{ display:none;}
 .header-link li a.toogle-btn{ display:block;}
-.header-link li a{ padding:0; height:45px; width:45px; line-height:45px; text-align:center;} 
+.header-link li a{ padding:0; height:45px; width:45px; line-height:45px; text-align:center;}
 .header-link li a span{ font-size:24px; margin-top:8px;}
 .header .btn-group .btn{ line-height:45px;}
 .header .btn-group .btn img{ height:45px; width:45px;}
@@ -376,7 +376,7 @@ body.noscroll:before{ content:''; position:fixed; top:0; left:0; bottom:0; right
 .media-table table > thead > tr > th:nth-child(3), .media-table table > tbody > tr > td:nth-child(4),
 .media-table table > thead > tr > th:nth-child(3), .media-table table > tbody > tr > td:nth-child(5){width:auto}
 #sortable.grid li{ width:33.333%}
-} 
+}
 /* END__ */
 
 @media only screen and (max-width: 767px) {
@@ -388,7 +388,7 @@ body.noscroll:before{ content:''; position:fixed; top:0; left:0; bottom:0; right
 #page-sidebar.active {left: 200px; width: 200px; -webkit-transition: all 0.4s ease 0s; -moz-transition: all 0.4s ease 0s; -ms-transition: all 0.4s ease 0s; -o-transition: all 0.4s ease 0s; transition: all 0.4s ease 0s;}
 .header-link li a strong{ display:none;}
 .header-link li a.toogle-btn{ display:block;}
-.header-link li a{ padding:0; height:45px; width:45px; line-height:45px; text-align:center;} 
+.header-link li a{ padding:0; height:45px; width:45px; line-height:45px; text-align:center;}
 .header-link li a span{ font-size:24px; margin-top:8px;}
 .header .btn-group .btn{ line-height:45px;}
 .header .btn-group .btn img{ height:45px; width:45px;}
@@ -403,11 +403,11 @@ body.noscroll:before{ content:''; position:fixed; top:0; left:0; bottom:0; right
 .neutral{ width:100%; margin-bottom:5px;}
 .generator{ width:100%}
 #content-scroll.content{ height:350px;}
-.page-table table > thead > tr > th:nth-child(1), 
-.page-table table > tbody > tr > td:nth-child(1), 
-.page-table table > thead > tr > th:nth-child(2), 
-.page-table table > tbody > tr > td:nth-child(3), 
-.page-table table > thead > tr > th:nth-child(3), 
+.page-table table > thead > tr > th:nth-child(1),
+.page-table table > tbody > tr > td:nth-child(1),
+.page-table table > thead > tr > th:nth-child(2),
+.page-table table > tbody > tr > td:nth-child(3),
+.page-table table > thead > tr > th:nth-child(3),
 .page-table table > tbody > tr > td:nth-child(3){width:auto}
 .media-table table > thead > tr > th:nth-child(1), .media-table table > tbody > tr > td:nth-child(1),
 .media-table table > thead > tr > th:nth-child(2), .media-table table > tbody > tr > td:nth-child(3),
@@ -432,7 +432,7 @@ body.noscroll:before{ content:''; position:fixed; top:0; left:0; bottom:0; right
 .img-gallery-thumb li{ width:50%}
 .jFiler-items-grid .jFiler-item { width:50%}
 #sortable.grid li{ width:50%}
-} 
+}
 .blinking{
     animation:blinkingText 1.2s infinite;
 
@@ -448,4 +448,10 @@ body.noscroll:before{ content:''; position:fixed; top:0; left:0; bottom:0; right
 
 .divider{
     min-height: 25px;
+}
+.single-student th{
+    width:25%;
+}
+.single-student td{
+    width: 75%;
 }
