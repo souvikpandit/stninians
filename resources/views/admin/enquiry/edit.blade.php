@@ -30,13 +30,13 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label>Subject</label>
-                                <input class="form-control" type="text" name="subject" id="" value="{{ $prayukty_enquiry_details->subject }}">
+                                <input class="form-control" type="text" name="subject" id="" value="{{ $prayukty_enquiry_details->subject }}" readonly>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label>Description</label>
-                                <textarea class="form-control" name="description" id="" cols="30" rows="10">{{ $prayukty_enquiry_details->description }}</textarea>
+                                <textarea class="form-control" name="description" id="" cols="30" rows="10" readonly>{{ $prayukty_enquiry_details->description }}</textarea>
                             </div>
                         </div>
                         <div class="col-md-12">
@@ -46,9 +46,14 @@
                             </div>
                         </div>
                         <div class="col-md-12">
-                            <div class="form-group">
-                                <label>Note</label>
-                                <textarea class="form-control" name="note" id="" cols="30" rows="5">{{ $prayukty_enquiry_details->note }}</textarea>
+
+                        </div>
+                        <div class="col-md-6">
+                            <div id="mydiv">
+                                <div id="mydivheader">Notes</div>
+                                <div class="form-group">
+                                   <textarea class="form-control" name="note" id="" cols="30" rows="5">{{ $prayukty_enquiry_details->note }}</textarea>
+                                </div>
                             </div>
                         </div>
                         {{-- <div class="col-md-6">

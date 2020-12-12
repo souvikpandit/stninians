@@ -5,4 +5,5 @@ return [
     'prayukty_note' => 'Note',
     'prayukty_enquiry' => 'Enquiry',
     'prayukty_edit' => 'Edit',
+    'prayukty_seo' => 'SEO Management',
 ];

@@ -145,6 +145,35 @@
     <script src="{{ asset('admin-assets/js/jquery-ui.js') }}" type="text/javascript"></script>
     <script src="//cdn.ckeditor.com/4.13.0/full-all/ckeditor.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+
+    {{-- <script src="https://cdn.datatables.net/buttons/1.6.5/js/dataTables.buttons.min.js"></script> --}}
+    <script src="{{ asset('admin-assets/js/dataTable.buttons.min.js') }}"></script>
+    <script src="{{ asset('admin-assets/js/buttons.flash.min.js') }}"></script>
+    <script src="{{ asset('admin-assets/js/jszip.min.js') }}"></script>
+    <script src="{{ asset('admin-assets/js/pdfmake.min.js') }}"></script>
+    <script src="{{ asset('admin-assets/js/vfs_fonts.js') }}"></script>
+    <script src="{{ asset('admin-assets/js/buttons.html5.min.js') }}"></script>
+    <script src="{{ asset('admin-assets/js/buttons.print.min.js') }}"></script>
+    <script>
+        $(document).ready(function() {
+            $('#myTable').DataTable( {
+                dom: 'Blfrtip',
+                buttons: [
+                    {
+                        extend: 'excelHtml5',
+                        title: 'Enquires of ST NINIANS HIGH SCHOOL'
+                    },
+                    {
+                        extend: 'pdfHtml5',
+                        title: 'Enquires of ST NINIANS HIGH SCHOOL'
+                    },
+                    'copy', 'csv', 'print'
+
+                ]
+            } );
+        } );
+    </script>
+
     <script>
         $("#password-1").hidePassword(true);
         $("#password-2").hidePassword(true);
@@ -165,5 +194,48 @@
     <script>
         CKEDITOR.replace( 'editor1' );
     </script>
-</body>
-</html>
+    <script>
+    //Make the DIV element draggagle:
+    dragElement(document.getElementById("mydiv"));
+
+    function dragElement(elmnt) {
+    var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+    if (document.getElementById(elmnt.id + "header")) {
+        /* if present, the header is where you move the DIV from:*/
+        document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+    } else {
+        /* otherwise, move the DIV from anywhere inside the DIV:*/
+        elmnt.onmousedown = dragMouseDown;
+    }
+
+    function dragMouseDown(e) {
+        e = e || window.event;
+        e.preventDefault();
+        // get the mouse cursor position at startup:
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        document.onmouseup = closeDragElement;
+        // call a function whenever the cursor moves:
+        document.onmousemove = elementDrag;
+    }
+
+    function elementDrag(e) {
+        e = e || window.event;
+        e.preventDefault();
+        // calculate the new cursor position:
+        pos1 = pos3 - e.clientX;
+        pos2 = pos4 - e.clientY;
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        // set the element's new position:
+        elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+        elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+    }
+
+    function closeDragElement() {
+        /* stop moving when mouse button is released:*/
+        document.onmouseup = null;
+        document.onmousemove = null;
+    }
+    }
+    </script>

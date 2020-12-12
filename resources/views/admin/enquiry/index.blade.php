@@ -6,7 +6,7 @@
                 <h1><a href="{{ route('admin.dashboard') }}">{{ trans('admininfo.admin_panel_breadcrumb') }}</a> / {{ trans('custom_info.prayukty_enquiry') }}</h1>
             </div>
             <div class="content-box intro-box">
-                <table class="table table-bordered" id="dataTable">
+                <table class="table table-bordered" id="myTable">
                     <thead>
                         <tr class="bg-danger text-white">
                             <td>{{ trans('custom_table_header.prayukty_name') }}</td>
@@ -40,6 +40,7 @@
 
         </div>
     </section>
+
 @endsection
 
 

@@ -17,7 +17,7 @@ class CreateEnquiriesTable extends Migration
             $table->id();
             $table->string('firstname', 191);
             $table->string('secondname',191);
-            $table->string('email', 191)->unique();
+            $table->string('email', 191);
             $table->string('subject', 191);
             $table->longText('description');
             $table->longText('note')->nullable();

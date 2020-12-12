@@ -17,6 +17,20 @@
                         </li>
                     </ul>
                 </li>
+                <li>
+                    <a href="#">
+                        <span><i class="fa fa-cog"></i>Site Settings</span>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="{{ route('cms.index') }}">SEO Manager</a>
+                            <a href="#">School Info</a>
+                            <a href="#">Banner</a>
+                            <a href="#">Mission & Vision</a>
+                            <a href="#">Principal Desk</a>
+                        </li>
+                    </ul>
+                </li>
             </ul>
         </nav>
     </aside>

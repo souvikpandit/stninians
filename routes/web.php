@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Website\WebsiteController;
 
 
 /*
@@ -14,9 +15,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',[App\Http\Controllers\website\WebsiteController::class, 'index'])->name('website.index');
+Route::get('about',[App\Http\Controllers\website\WebsiteController::class, 'about'])->name('website.about');
+Route::get('prospectus',[App\Http\Controllers\website\WebsiteController::class, 'prospectus'])->name('website.prospectus');
+Route::get('gallery',[App\Http\Controllers\website\WebsiteController::class, 'gallery'])->name('website.gallery');
+Route::get('contact',[App\Http\Controllers\website\WebsiteController::class, 'contact'])->name('website.contact');
+Route::get('admission-form',[App\Http\Controllers\website\WebsiteController::class, 'admissionForm'])->name('website.admission-form');
+Route::get('login',[App\Http\Controllers\website\WebsiteController::class, 'login'])->name('website.login');
 
 /**Admin Login Needed */
 Route::get('dashboard', function () {
@@ -32,8 +37,10 @@ Route::get('enquiry/reply/{id}',[App\Http\Controllers\admin\EnquiryController::c
 Route::get('enquiry/show/{id}',[App\Http\Controllers\admin\EnquiryController::class, 'show'])->name('enquiry.show');
 Route::post('enquiry/update/{id}',[App\Http\Controllers\admin\EnquiryController::class, 'update'])->name('enquiry.update');
 
-//Route::post('raise-enquiry/',[App\Http\Controllers\admin\EnquiryController::class, 'store'])->name('enquiry.raise');
+Route::post('raise-enquiry/',[App\Http\Controllers\admin\EnquiryController::class, 'store'])->name('enquiry.raise');
 
+
+Route::get('cms/seo-manager',[App\Http\Controllers\admin\CMSController::class, 'index'])->name('cms.index');
 /**
  * Admin Panel Routing End
  */

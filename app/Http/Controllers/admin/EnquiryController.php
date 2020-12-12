@@ -38,7 +38,8 @@ class EnquiryController extends Controller
         $prayukty_enquiry->subject = $prayukty_request->subject;
         $prayukty_enquiry->description = $prayukty_request->description;
         $prayukty_enquiry->save();
-        return redirect('/enquiry/index')->with('success','You have successfully Raise your Request');
+
+        return redirect('contact')->with('success','You have successfully Raise your Request');
     }
 
     public function update(Request $request,$id)

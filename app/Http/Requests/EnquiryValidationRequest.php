@@ -26,7 +26,7 @@ class EnquiryValidationRequest extends FormRequest
         return [
             'firstname' => 'required',
             'secondname' => 'required',
-            'email' => 'required|unique:enquiries',
+            'email' => 'required',
             'subject' => 'required',
             'description' => 'required',
 
