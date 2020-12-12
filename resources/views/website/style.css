@@ -4627,10 +4627,10 @@ ul {
     margin-top: 30px;
     margin-right: 20px;
 }
-.rs-counter-style8 .rs-counter-list .icon-part i:before {
+/* .rs-counter-style8 .rs-counter-list .icon-part i:before {
     font-size: 60px;
     color: #ff3115;
-}
+} */
 .rs-counter-style8 .rs-counter-list .text-part .counter-number {
     font-size: 45px;
     color: #212121;
