@@ -24,10 +24,10 @@
                     <ul>
                         <li>
                             <a href="{{ route('cms.index') }}">SEO Manager</a>
-                            <a href="#">School Info</a>
-                            <a href="#">Banner</a>
-                            <a href="#">Mission & Vision</a>
-                            <a href="#">Principal Desk</a>
+                            <a href="{{ route('cms.school_info') }}">School Info</a>
+                            <a href="{{ route('cms.banner') }}">Banner</a>
+                            <a href="{{ route('cms.about') }}">Mission & Vision</a>
+                            <a href="{{ route('cms.principal_desk') }}">Principal Desk</a>
                         </li>
                     </ul>
                 </li>

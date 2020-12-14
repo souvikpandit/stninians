@@ -15,18 +15,21 @@ class EnquiryController extends Controller
     public function index()
     {   $prayukty_enquiries = PrayuktySelect('App\Models\admin\Enquiry','status','all');
         //$enquiries = Enquiry::all();
-        return view('admin.enquiry.index', compact('prayukty_enquiries'));
+        $slug = "CSNHS Enquiry";
+        return view('admin.enquiry.index', compact('prayukty_enquiries','slug'));
     }
 
     public function notreplied()
     {   $prayukty_enquiries = PrayuktySelect('App\Models\admin\Enquiry','status','false');
-        return view('admin.enquiry.index', compact('prayukty_enquiries'));
+        $slug = "CSNHS Not Replied Enquiry";
+        return view('admin.enquiry.index', compact('prayukty_enquiries','slug'));
     }
 
     public function reply($id)
     {
         $prayukty_enquiry_details = Enquiry::find($id);
-        return view('admin.enquiry.edit',compact('prayukty_enquiry_details'));
+        $slug = "CSNHS Enquiry Edit";
+        return view('admin.enquiry.edit',compact('prayukty_enquiry_details','slug'));
     }
 
     public function store(EnquiryValidationRequest $prayukty_request)
@@ -59,6 +62,7 @@ class EnquiryController extends Controller
     public function show($id)
     {
         $prayukty_enquery_details = Enquiry::find($id);
-        return view('admin.enquiry.show',compact('prayukty_enquery_details'));
+        $slug = "CSNHS Enquiry Show";
+        return view('admin.enquiry.show',compact('prayukty_enquery_details','slug'));
     }
 }

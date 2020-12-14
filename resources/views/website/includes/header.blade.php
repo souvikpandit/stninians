@@ -5,7 +5,7 @@
         <meta charset='UTF-8'>
         <meta name='keywords' content='Cossipore St Ninians High School'>
         <meta name='description' content='Cossipore St Ninians High School'>
-        <meta name='subject' content='your website's subject'>
+        <meta name='subject' content='your website subject'>
         <meta name='copyright' content='Cossipore St Ninians High School'>
         <meta name='language' content='ES'>
         <meta name='Classification' content='Education'>

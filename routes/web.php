@@ -25,7 +25,8 @@ Route::get('login',[App\Http\Controllers\website\WebsiteController::class, 'logi
 
 /**Admin Login Needed */
 Route::get('dashboard', function () {
-    return view('admin.index');
+    $slug = "Welcome to";
+    return view('admin.index',compact('slug'));
 })->name('admin.dashboard');
 
 /***
@@ -41,6 +42,10 @@ Route::post('raise-enquiry/',[App\Http\Controllers\admin\EnquiryController::clas
 
 
 Route::get('cms/seo-manager',[App\Http\Controllers\admin\CMSController::class, 'index'])->name('cms.index');
+Route::get('cms/school-info',[App\Http\Controllers\admin\CMSController::class, 'schoolInfo'])->name('cms.school_info');
+Route::get('cms/banner-management',[App\Http\Controllers\admin\CMSController::class, 'schoolBanner'])->name('cms.banner');
+Route::get('cms/about-mission-vision',[App\Http\Controllers\admin\CMSController::class, 'schoolAbout'])->name('cms.about');
+Route::get('cms/principal-desk',[App\Http\Controllers\admin\CMSController::class, 'schoolPrincipalDesk'])->name('cms.principal_desk');
 /**
  * Admin Panel Routing End
  */
