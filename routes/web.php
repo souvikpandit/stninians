@@ -46,6 +46,9 @@ Route::get('cms/school-info',[App\Http\Controllers\admin\CMSController::class, '
 Route::get('cms/banner-management',[App\Http\Controllers\admin\CMSController::class, 'schoolBanner'])->name('cms.banner');
 Route::get('cms/about-mission-vision',[App\Http\Controllers\admin\CMSController::class, 'schoolAbout'])->name('cms.about');
 Route::get('cms/principal-desk',[App\Http\Controllers\admin\CMSController::class, 'schoolPrincipalDesk'])->name('cms.principal_desk');
+
+Route::get('admission/index',[App\Http\Controllers\admin\AdmissionController::class, 'index'])->name('admission.index');
+Route::get('admission/details',[App\Http\Controllers\admin\AdmissionController::class, 'admissionDetails'])->name('admission.admission_details');
 /**
  * Admin Panel Routing End
  */

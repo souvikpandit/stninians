@@ -10,4 +10,6 @@ return [
     'prayukty_banner' => 'Banner Management',
     'prayukty_about' => 'About-Mission-Vision',
     'prayukty_principal_desk' => 'Principal Desk',
+    'prayukty_admission_index' => 'All Admission Request',
+    'prayukty_admission_details' => 'Details Admission Request',
 ];

@@ -181,6 +181,46 @@
                 ]
             } );
         } );
+        $(document).ready(function() {
+            $('#admission_table').DataTable( {
+                dom: 'Bfrtip',
+                buttons: [
+                    {
+                        extend: 'excelHtml5',
+                        title: 'Enquires of ST NINIANS HIGH SCHOOL'
+                    },
+                    {
+                        extend: 'pdfHtml5',
+                        title: 'Enquires of ST NINIANS HIGH SCHOOL'
+                    },
+                    'copy', 'csv', 'print'
+
+                ]
+            } );
+        } );
+        $(document).ready(function() {
+            $('#admission_detail').DataTable( {
+                dom: 'B',
+                buttons: [
+                    {
+                        extend: 'excelHtml5',
+                        title: 'Enquires of ST NINIANS HIGH SCHOOL'
+                    },
+                    {
+                        extend: 'pdfHtml5',
+                        title: 'Enquires of ST NINIANS HIGH SCHOOL'
+                    },
+                    'copy', 'csv', 'print'
+
+                ],
+                "aaSorting": [],
+                
+                "aoColumnDefs": [
+                { "bSortable": false, "aTargets": [ 0,1] } 
+                ],
+                "pageLength": 50,
+            } );
+        } );
     </script>
 
     <script>
