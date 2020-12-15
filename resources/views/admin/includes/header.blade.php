@@ -42,7 +42,7 @@
             </button>
             <ul class="dropdown-menu">
                 <li>
-                    <a href="logout.php"><i class="fa fa-sign-out"></i>Logout</a>
+                    <a href="{{ route('logout') }}"><i class="fa fa-sign-out"></i>Logout</a>
                 </li>
             </ul>
         </div>

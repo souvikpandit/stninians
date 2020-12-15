@@ -21,10 +21,12 @@ Route::get('prospectus',[App\Http\Controllers\website\WebsiteController::class, 
 Route::get('gallery',[App\Http\Controllers\website\WebsiteController::class, 'gallery'])->name('website.gallery');
 Route::get('contact',[App\Http\Controllers\website\WebsiteController::class, 'contact'])->name('website.contact');
 Route::get('admission-form',[App\Http\Controllers\website\WebsiteController::class, 'admissionForm'])->name('website.admission-form');
-Route::get('login',[App\Http\Controllers\website\WebsiteController::class, 'login'])->name('website.login');
+Route::get('Login',[App\Http\Controllers\website\WebsiteController::class, 'login'])->name('website.login');
 
+Auth::routes();
 /**Admin Login Needed */
-Route::get('dashboard', function () {
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('dashboard', function () {
     $slug = "Welcome to";
     return view('admin.index',compact('slug'));
 })->name('admin.dashboard');
@@ -46,6 +48,12 @@ Route::get('cms/school-info',[App\Http\Controllers\admin\CMSController::class, '
 Route::get('cms/banner-management',[App\Http\Controllers\admin\CMSController::class, 'schoolBanner'])->name('cms.banner');
 Route::get('cms/about-mission-vision',[App\Http\Controllers\admin\CMSController::class, 'schoolAbout'])->name('cms.about');
 Route::get('cms/principal-desk',[App\Http\Controllers\admin\CMSController::class, 'schoolPrincipalDesk'])->name('cms.principal_desk');
+});
+
 /**
  * Admin Panel Routing End
  */
+
+
+
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
