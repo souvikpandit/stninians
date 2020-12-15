@@ -31,6 +31,17 @@
                         </li>
                     </ul>
                 </li>
+                <li>
+                    <a href="#">
+                        <span><i class="fa fa-buysellads"></i>Admission</span>
+                    </a>
+                    <ul>
+                        <li><a href="{{ route('admission.index') }}">All Request</a></li>
+                        <li><a href="{{ route('admission.index') }}">Approved Request</a></li>
+                        <li><a href="{{ route('admission.index') }}">Pending Request</a></li>
+                        <li><a href="{{ route('admission.index') }}">Declined Request</a></li>
+                    </ul>
+                </li>
             </ul>
         </nav>
     </aside>
