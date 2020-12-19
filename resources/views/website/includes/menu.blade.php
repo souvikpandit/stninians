@@ -21,8 +21,13 @@
 										<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
 										<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
 									</ul>
-								</div>
-								<a href="{{ route('website.login') }}" class="apply-btn">Login/Sign Up</a>
+                                </div>
+                                @auth
+                                    <a href="{{ route('logout') }}"><i class="fa fa-sign-out"></i>Logout</a>
+                                @endauth
+                                @guest
+								    <a href="{{ route('website.login') }}" class="apply-btn">Login/Sign Up</a>
+                                @endguest
 							</div>
 						</div>
 					</div>
@@ -92,7 +97,8 @@
 												  <li><a href="index8.html">Home Eight</a> </li>
 												</ul>
 											</li> -->
-											<!-- End Home -->
+                                            <!-- End Home -->
+                                            @guest
                                             <li> <a href="{{ route('website.index') }}">Home</a></li>
 
                                             <li> <a href="{{ route('website.about') }}">About Us</a></li>
@@ -103,7 +109,14 @@
 
                                             <li> <a href="{{ route('website.contact') }}">Contact</a></li>
 
-                                            <li> <a href="{{ route('website.admission-form') }}">Apply Now</a></li>
+                                            <li> <a href="{{ route('website.login') }}">Apply Now</a></li>
+                                            @endguest
+
+                                            @auth
+                                            <li> <a href="{{ route('website.student-dashboard') }}">Dashboard</a></li>
+
+                                            <li> <a href="{{ route('website.admission-form') }}">Admission FOrm</a></li>
+                                            @endauth
 
 										</ul>
 									</nav>

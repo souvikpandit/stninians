@@ -20,10 +20,18 @@ Route::get('about',[App\Http\Controllers\website\WebsiteController::class, 'abou
 Route::get('prospectus',[App\Http\Controllers\website\WebsiteController::class, 'prospectus'])->name('website.prospectus');
 Route::get('gallery',[App\Http\Controllers\website\WebsiteController::class, 'gallery'])->name('website.gallery');
 Route::get('contact',[App\Http\Controllers\website\WebsiteController::class, 'contact'])->name('website.contact');
-Route::get('admission-form',[App\Http\Controllers\website\WebsiteController::class, 'admissionForm'])->name('website.admission-form');
+
 Route::get('Login',[App\Http\Controllers\website\WebsiteController::class, 'login'])->name('website.login');
 
+//Student Routing For Signin
+Route::post('student/signin',[App\Http\Controllers\student\StudentController::class, 'register'])->name('student.register');
+Route::post('student/login',[App\Http\Controllers\student\StudentLoginController::class, 'login'])->name('student.login');
+
+
+
 Auth::routes();
+
+
 /**Admin Login Needed */
 Route::group(['middleware' => 'auth'], function () {
     Route::get('dashboard', function () {
@@ -54,12 +62,12 @@ Route::get('admission/index',[App\Http\Controllers\admin\AdmissionController::cl
 Route::get('admission/details',[App\Http\Controllers\admin\AdmissionController::class, 'admissionDetails'])->name('admission.admission_details');
 
 Route::resource('general', App\Http\Controllers\admin\GeneralController::class);
+
+
 });
-/**
- * Admin Panel Routing End
- */
 
-
-
-//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::group(['middleware' => 'student_auth'], function () {
+    Route::get('student-zone',[App\Http\Controllers\website\WebsiteController::class, 'admissionForm'])->name('website.admission-form');
+    Route::get('student-dashboard',[App\Http\Controllers\website\WebsiteController::class, 'admissionDashboard'])->name('website.student-dashboard');
+});
 

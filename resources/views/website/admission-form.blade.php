@@ -9,7 +9,7 @@
 		                    <h1 class="page-title">Apply Now</h1>
 		                    <ul>
 		                        <li>
-		                            <a class="active" href="index.html">Home</a>
+		                            <a class="active" href="{{ route('website.student-dashboard') }}">Dashboard</a>
 		                        </li>
 		                        <li>Admission Form</li>
 		                    </ul>

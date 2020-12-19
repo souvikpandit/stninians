@@ -31,6 +31,10 @@ class WebsiteController extends Controller
     {
         return view('website.admission-form');
     }
+    public function admissionDashboard(Type $var = null)
+    {
+        return view('website.admission-dashboard');
+    }
     public function login(Type $var = null)
     {
         return view('website.login');

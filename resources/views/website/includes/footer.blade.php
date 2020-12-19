@@ -1,9 +1,10 @@
-
+@guest
 <div class="charecter hide" id="charecter">
-    <a href="{{ route('website.admission-form') }}">
+    <a href="{{ route('website.login') }}">
         <img class="blink" src="{{ asset('website-assets/images/character.png') }}" alt="">
     </a>
 </div>
+@endguest
         <!-- Footer Start -->
         <footer id="rs-footer" class="bg3 rs-footer">
 			<div class="container">
