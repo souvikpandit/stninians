@@ -11,3 +11,25 @@ if (!function_exists('PrayuktyDateFormat')) {
         }
     }
 }
+
+if (!function_exists('GetDefaultImage')) {
+    function GetDefaultImage()
+    {
+        try {
+            return 'website-assets/images/about/history.jpg';
+        } catch (\Throwable $th) {
+            throw $th;
+        }
+    }
+}
+
+if (!function_exists('GetDefaultText')) {
+    function GetDefaultText()
+    {
+        try {
+            return "Powerd By Prayukty";
+        } catch (\Throwable $th) {
+            throw $th;
+        }
+    }
+}

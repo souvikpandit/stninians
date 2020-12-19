@@ -33,25 +33,51 @@
     				<div class="col-md-4 pl-0">
     					<div class="contact-info contact-address">
     						<i class="fa fa-map-marker"></i>
-    						<h4>Address</h4>
-    						<p>503  Old Buffalo Street</p>
-    						<p>Northwest #205, New York-3087</p>
+                                <h4 class="contact-title">Address</h4>
+                                @if ($school_info)
+								    <p class="contact-desc">
+									    {{ json_decode($school_info->getMetaDetails($school_info->id,'sc_info'),true)[2] }}, {{ json_decode($school_info->getMetaDetails($school_info->id,'sc_info'),true)[3] }}, {{ json_decode($school_info->getMetaDetails($school_info->id,'sc_info'),true)[5] }} - {{ json_decode($school_info->getMetaDetails($school_info->id,'sc_info'),true)[8] }}<br>
+                                        {{ json_decode($school_info->getMetaDetails($school_info->id,'sc_info'),true)[4] }}, {{ json_decode($school_info->getMetaDetails($school_info->id,'sc_info'),true)[6] }}<br>
+                                        {{ json_decode($school_info->getMetaDetails($school_info->id,'sc_info'),true)[7] }}
+								    </p>
+
+                                @else
+                                    <p class="contact-desc">
+									    {{ GetDefaultText() }}<br>
+								    </p>
+                                @endif
     					</div>
     				</div>
     				<div class="col-md-4">
     					<div class="contact-info contact-phone">
     						<i class="fa fa-phone"></i>
-    						<h4>Phone Number</h4>
-    						<a href="tel:+3453-909-6565">+3453-909-6565</a>
-    						<a href="tel:+2390-875-2235">+2390-875-2235</a>
+    						<h4 class="contact-title">Phone Number</h4>
+                                @if ($school_info)
+                                    <p class="contact-desc">
+                                        <a href="tel:{{ json_decode($school_info->getMetaDetails($school_info->id,'sc_info'),true)[13] }}">{{ json_decode($school_info->getMetaDetails($school_info->id,'sc_info'),true)[13] }}</a>
+									    <a href="tel:{{ json_decode($school_info->getMetaDetails($school_info->id,'sc_info'),true)[12] }}">{{ json_decode($school_info->getMetaDetails($school_info->id,'sc_info'),true)[12] }}</a>
+								    </p>
+                                @else
+                                    <p class="contact-desc">
+									    {{ GetDefaultText() }}<br>
+								    </p>
+                                @endif
     					</div>
     				</div>
     				<div class="col-md-4 pr-0">
     					<div class="contact-info contact-email">
     						<i class="fa fa-envelope"></i>
-    						<h4>Email Address</h4>
-    						<a href="mailto:infoname@gmail.com"><p>infoname@gmail.com</p></a>
-    						<a href="#"><p>www.yourname.com</p></a>
+    						<h4 class="contact-title">Email Address</h4>
+                                @if ($school_info)
+                                    <p class="contact-desc">
+									   <a href="mailto:{{ json_decode($school_info->getMetaDetails($school_info->id,'sc_info'),true)[10] }}"> {{ json_decode($school_info->getMetaDetails($school_info->id,'sc_info'),true)[10] }}</a>
+									    <a href="mailto:{{ json_decode($school_info->getMetaDetails($school_info->id,'sc_info'),true)[11] }}"> {{ json_decode($school_info->getMetaDetails($school_info->id,'sc_info'),true)[11] }}</a>
+								    </p>
+                                @else
+                                    <p class="contact-desc">
+									    {{ GetDefaultText() }}<br>
+								    </p>
+                                @endif
         				</div>
         			</div>
         		</div>
@@ -106,7 +132,8 @@
 					</form>
                 </div>
                 <div class="divider"></div>
-                <div id="googleMap"></div>
+                {{-- <div id="googleMap"></div> --}}
+                {!! json_decode($school_info->getMetaDetails($school_info->id,'sc_info'),true)[9] !!}
         	</div>
         </div>
         <!-- Contact Section End -->

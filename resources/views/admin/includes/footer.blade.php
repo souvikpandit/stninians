@@ -177,7 +177,7 @@
                 dom: 'lfrtip',
                 "order": [ 0, 'desc' ],
                 "aoColumnDefs": [
-                { "bSortable": false, "aTargets": [ 1,2,3,4,5,6,7,8 ] } 
+                { "bSortable": false, "aTargets": [ 1,2,3,4,5,6,7,8 ] }
                 ]
             } );
         } );
@@ -214,9 +214,9 @@
 
                 ],
                 "aaSorting": [],
-                
+
                 "aoColumnDefs": [
-                { "bSortable": false, "aTargets": [ 0,1] } 
+                { "bSortable": false, "aTargets": [ 0,1] }
                 ],
                 "pageLength": 50,
             } );
@@ -286,5 +286,12 @@
         document.onmouseup = null;
         document.onmousemove = null;
     }
+    }
+    </script>
+    <script>
+    setTimeout(fade_out, 5000);
+
+    function fade_out() {
+    $(".message").fadeOut().empty();
     }
     </script>

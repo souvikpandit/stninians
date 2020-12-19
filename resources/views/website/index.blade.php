@@ -53,13 +53,17 @@
             </div>
         </div>
 		<!-- Services End -->
-		<!-- History Start -->
+		<!-- Principle Desk Start -->
         <div class="rs-history sec-spacer">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 col-md-12 rs-vertical-bottom mobile-mb-50">
                     	<a href="#">
-							<img src="{{ asset('website-assets/images/about/history.jpg') }}" alt="History Image">
+                            @if ($principle_desk)
+							<img src="{{ asset('storage/'.$principle_desk->image) }}" alt="History Image">
+                            @else
+                               <img src="{{ asset(GetDefaultImage()) }}" alt="">
+                            @endif
                     	</a>
                     </div>
                     <div class="col-lg-6 col-md-12">
@@ -67,15 +71,18 @@
 		                    <h2>Principal's Desk</h2>
 		                </div>
                     	<div class="about-desc">
-                			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eius mod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehe derit in voluptate velit esse cillum.</p>
+                            @if ($principle_desk)
+                			<p>{{ $principle_desk->getMetaDetails($principle_desk->id,'principle_desk_content') }}</p>
 
-                			<p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot fore see the pain and trouble that are bound to belongs to who fail in their duty.</p>
+                            @else
+                                <p>{{ GetDefaultText() }}</p>
+                            @endif
                     	</div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- History End -->
+        <!-- Principle Desk End -->
 
 
 		<!-- Counter Up Section Start-->
@@ -145,12 +152,20 @@
             <div class="container">
                 <div class="sec-title mb-50 text-center">
                     <h2>ABOUT US</h2>
-                	<p>Fusce sem dolor, interdum in fficitur at, faucibus nec lorem. Sed nec molestie justo.</p>
+                    @if ($about)
+                	<p>{{ $about->getMetaDetails($about->id,'about') }}</p>
+                    @else
+                        <p>{{ GetDefaultText() }}</p>
+                    @endif
                 </div>
                 <div class="row">
                     <div class="col-lg-6 col-md-12">
                         <div class="about-img rs-animation-hover">
+                            @if ($about)
 							<img src="{{ asset('website-assets/images/about/about.jpg') }}" alt="img02">
+                            @else
+                            <img src="{{ asset(GetDefaultImage()) }}" alt="">
+                            @endif
 							<a class="popup-youtube rs-animation-fade" href="https://www.youtube.com/watch?v=tzMpWiGL8D8" title="Video Icon">
 							</a>
 							<div class="overly-border"></div>
@@ -170,7 +185,11 @@
 						        </div>
 						        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
 						            <div class="card-body">
-						                There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
+                                        @if ($about)
+						                {{ $about->getMetaDetails($about->id,'about') }}
+                                        @else
+                                        <p>{{ GetDefaultText() }}</p>
+                                        @endif
 						            </div>
 						        </div>
 						    </div>
@@ -182,7 +201,11 @@
 						        </div>
 						        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
 						            <div class="card-body">
-						                There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
+                                        @if ($about)
+						                {{ $about->getMetaDetails($about->id,'mission') }}
+                                        @else
+                                        <p>{{ GetDefaultText() }}</p>
+                                        @endif
 						            </div>
 						        </div>
 						    </div>
@@ -194,7 +217,11 @@
 						        </div>
 						        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
 						            <div class="card-body">
-						                There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
+                                        @if ($about)
+						                {{ $about->getMetaDetails($about->id,'vision') }}
+                                        @else
+                                        <p>{{ GetDefaultText() }}</p>
+                                        @endif
 						            </div>
 						        </div>
 						    </div>

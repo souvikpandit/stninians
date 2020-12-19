@@ -42,10 +42,7 @@
 						            <div id="info-details" class="widget-text">
                                         <i class="glyph-icon flaticon-email"></i>
 						                <div class="info-text">
-						                    <a href="mailto:info@domain.com">
-						                    	<span>Mail Us</span>
-												stninianhsfg@gmail.com
-											</a>
+                                            <a href="mailto:{{ json_decode($school_info->getMetaDetails($school_info->id,'sc_info'),true)[10] }}"> <span>Mail Us</span> {{ json_decode($school_info->getMetaDetails($school_info->id,'sc_info'),true)[10] }}</a><br>
 						                </div>
 						            </div>
 						        </div>
@@ -60,10 +57,7 @@
 						            <div id="phone-details" class="widget-text">
 						                <i class="glyph-icon flaticon-phone-call"></i>
 						                <div class="info-text">
-						                    <a href="tel:4155551234">
-						                    	<span>Call Us</span>
-												033 2528 7763
-											</a>
+                                            <a href="tel:{{ json_decode($school_info->getMetaDetails($school_info->id,'sc_info'),true)[13] }}"><span>Call Us</span>{{ json_decode($school_info->getMetaDetails($school_info->id,'sc_info'),true)[13] }}</a><br>
 						                </div>
 						            </div>
 						        </div>

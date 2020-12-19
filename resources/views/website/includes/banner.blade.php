@@ -1,56 +1,31 @@
+
 <!-- Slider Area Start -->
+@php
+    $all_banners = PrayuktySelect('App\Models\website\Post','type','banner');
+@endphp
         <div id="rs-slider" class="slider-overlay-2">
         	<div id="home-slider">
-				<!-- Item 1 -->
-				<div class="item active">
-					<img src="{{ asset('website-assets/images/slider/home1/slide1.jpg') }}" alt="Slide1">
+                @foreach ($all_banners as $banner)
+                    @if ($loop->iteration==1)
+                        <div class="item active">
+                    @else
+                        <div class="item">
+                    @endif
+                        <img src="{{ asset('storage/'.$banner->image) }}" alt="Slide1">
 					<div class="slide-content">
 						<div class="display-table">
 							<div class="display-table-cell">
 								<div class="container text-center">
-									<h1 class="slider-title" data-animation-in="fadeInLeft" data-animation-out="animate-out">WELCOME TO ST. NINIAN'S HIGH SCHOOL</h1>
-									<p data-animation-in="fadeInUp" data-animation-out="animate-out" class="slider-desc">The first Bishop of Scotland and founder of 1st church of scotland.</p>
-									<a href="#" class="sl-readmore-btn mr-30" data-animation-in="lightSpeedIn" data-animation-out="animate-out">READ MORE</a>
-									<a href="#" class="sl-get-started-btn" data-animation-in="lightSpeedIn" data-animation-out="animate-out">GET STARTED NOW</a>
+									<h1 class="slider-title" data-animation-in="fadeInLeft" data-animation-out="animate-out">{{ $banner->name }}</h1>
+									<p data-animation-in="fadeInUp" data-animation-out="animate-out" class="slider-desc">{{ $banner->getMetaDetails($banner->id,'sub_title') }}</p>
+									<a href="{{ $banner->getMetaDetails($banner->id,'read_more_button_url') }}" class="sl-readmore-btn mr-30" data-animation-in="lightSpeedIn" data-animation-out="animate-out">READ MORE</a>
+									<a href="{{ $banner->getMetaDetails($banner->id,'get_started_button_url') }}" class="sl-get-started-btn" data-animation-in="lightSpeedIn" data-animation-out="animate-out">GET STARTED NOW</a>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-
-				<!-- Item 2 -->
-				<div class="item">
-					<img src="{{ asset('website-assets/images/slider/home1/slide2.jpg') }}" alt="Slide2">
-					<div class="slide-content">
-						<div class="display-table">
-							<div class="display-table-cell">
-								<div class="container text-center">
-									<h1 class="slider-title" data-animation-in="fadeInUp" data-animation-out="animate-out">ARE YOU READY TO APPLY?</h1>
-									<p data-animation-in="fadeInUp" data-animation-out="animate-out" class="slider-desc">110 Years of service in the field of education</p>
-									<a href="#" class="sl-readmore-btn mr-30" data-animation-in="fadeInUp" data-animation-out="animate-out">READ MORE</a>
-									<a href="#" class="sl-get-started-btn" data-animation-in="fadeInUp" data-animation-out="animate-out">GET STARTED NOW</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<!-- Item 3 -->
-				<div class="item">
-					<img src="{{ asset('website-assets/images/slider/home1/slide3.jpg') }}" alt="Slide3">
-					<div class="slide-content">
-						<div class="display-table">
-							<div class="display-table-cell">
-								<div class="container text-center">
-									<h1 class="slider-title" data-animation-in="fadeInUp" data-animation-out="animate-out">ARE YOU READY TO APPLY?</h1>
-									<p data-animation-in="fadeInUp" data-animation-out="animate-out" class="slider-desc">Fusce sem dolor, interdum in efficitur at, faucibus nec lorem.Sed nec molestie justo.<br> Nunc quis sapien in arcu pharetra volutpat.Morbi nec vulputate dolor.</p>
-									<a href="#" class="sl-readmore-btn mr-30" data-animation-in="fadeInUp" data-animation-out="animate-out">READ MORE</a>
-									<a href="#" class="sl-get-started-btn" data-animation-in="fadeInUp" data-animation-out="animate-out">GET STARTED NOW</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+                @endforeach
 
         	</div>
         </div>

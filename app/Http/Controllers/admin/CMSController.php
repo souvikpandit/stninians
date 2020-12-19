@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\admin;
 
-use App\Http\Controllers\Controller;
+use App\Models\website\Post;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class CMSController extends Controller
 {
@@ -17,7 +18,8 @@ class CMSController extends Controller
     }
     public function schoolBanner(){
         $slug = "CSNHS Banner Management";
-        return view('admin.cms.banner',compact('slug'));
+        $banners = PrayuktySelect('App\Models\website\Post','type','banner');
+        return view('admin.cms.banner',compact('slug','banners'));
     }
     public function schoolAbout(){
         $slug = "CSNHS Banner Management";

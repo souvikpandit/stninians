@@ -52,6 +52,8 @@ Route::get('cms/principal-desk',[App\Http\Controllers\admin\CMSController::class
 
 Route::get('admission/index',[App\Http\Controllers\admin\AdmissionController::class, 'index'])->name('admission.index');
 Route::get('admission/details',[App\Http\Controllers\admin\AdmissionController::class, 'admissionDetails'])->name('admission.admission_details');
+
+Route::resource('general', App\Http\Controllers\admin\GeneralController::class);
 });
 /**
  * Admin Panel Routing End
