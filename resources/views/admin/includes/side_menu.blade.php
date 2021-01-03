@@ -23,7 +23,7 @@
                     </a>
                     <ul>
                         <li>
-                            <a href="{{ route('cms.index') }}">SEO Manager</a>
+                            {{-- <a href="{{ route('cms.index') }}">SEO Manager</a> --}}
                             <a href="{{ route('cms.school_info') }}">School Info</a>
                             <a href="{{ route('cms.banner') }}">Banner</a>
                             <a href="{{ route('cms.about') }}">Mission & Vision</a>
@@ -37,9 +37,9 @@
                     </a>
                     <ul>
                         <li><a href="{{ route('admission.index') }}">All Request</a></li>
-                        <li><a href="{{ route('admission.index') }}">Approved Request</a></li>
-                        <li><a href="{{ route('admission.index') }}">Pending Request</a></li>
-                        <li><a href="{{ route('admission.index') }}">Declined Request</a></li>
+                        <li><a href="{{ route('admission.approved') }}">Approved Request</a></li>
+                        <li><a href="{{ route('admission.pending') }}">Pending Request</a></li>
+                        <li><a href="{{ route('admission.declined') }}">Declined Request</a></li>
                     </ul>
                 </li>
             </ul>

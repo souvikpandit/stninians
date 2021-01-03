@@ -20,7 +20,7 @@ class EnquiryController extends Controller
     }
 
     public function notreplied()
-    {   $prayukty_enquiries = PrayuktySelect('App\Models\admin\Enquiry','status','false');
+    {   $prayukty_enquiries = PrayuktySelect('App\Models\admin\Enquiry','status',0);
         $slug = "CSNHS Not Replied Enquiry";
         return view('admin.enquiry.index', compact('prayukty_enquiries','slug'));
     }

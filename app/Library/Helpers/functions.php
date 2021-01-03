@@ -33,3 +33,14 @@ if (!function_exists('GetDefaultText')) {
         }
     }
 }
+
+if (!function_exists('GetDefaultSession')) {
+    function GetDefaultSession()
+    {
+        try {
+            return "2021-2022";
+        } catch (\Throwable $th) {
+            throw $th;
+        }
+    }
+}

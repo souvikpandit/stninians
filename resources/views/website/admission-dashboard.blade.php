@@ -19,6 +19,9 @@
 		    </div>
 		</div>
 		<!-- Breadcrumbs End -->
+        <div id="form-messages" class="col-md-4 pull-right" style="margin-top: 7px;">
+            <b>@include('website.includes.messages')</b>
+         </div>
 
 		<!-- History Start -->
         <div class="rs-history sec-spacer">
@@ -26,9 +29,37 @@
                 <div class="row">
                     <div class="col-lg-12 col-md-12" style="margin-top: -35px;">
 		                <div class="abt-title">
-		                    <h2>Dashboard</h2>
+                            <h2>Dashboard</h2>
+                            @php
+                                $user_id = Auth::user()->id;
+
+                                $student_details = PrayuktySelectOne("App\Models\student\Student","confirmed", true);
+                            @endphp
+                            @if ($student_details)
+                            @php
+                                $payment_details = App\Models\student\PaymentDetails::where([['user_id',$user_id],['session',GetDefaultSession()]])->get();
+                                //dd($payment_details);
+                                $numrows = count($payment_details);
+                                //echo $payment_details;
+
+                            @endphp
+                                @if ($numrows==0)
+                                    <form action="{{ route("student.payment") }}" method="POST">
+                                        @csrf
+                                        <input type="text" name="amount" value="12500" hidden>
+                                        <input type="text" name="user_id" value="{{ Auth::user()->id }}" hidden>
+                                        <input type="text" name="student_name" value="{{ Auth::user()->name }}" hidden>
+                                        <input type="text" name="student_email" value="{{ Auth::user()->email }}" hidden>
+                                        <input type="text" name="phno" value="{{ $student_details->student_phone_number }}" hidden>
+                                        <input type="submit" class="pull-right my-button" value="Pay Now">
+                                    </form>
+                                @else
+
+                                @endif
+
+                            @endif
                         </div>
-                        <h3 style="text-align: center;">For any details contact to St. Ninians School</h3>
+                        <h3>For any details contact to St. Ninians School</h3>
                         <div class="row ">
                             <div class="form-desc col-md-6">
                                 <h3>Phone Number</h3>
@@ -48,3 +79,4 @@
         </div>
         <!-- History End -->
 @endsection
+

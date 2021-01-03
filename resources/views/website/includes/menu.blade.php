@@ -16,10 +16,10 @@
 							<div class="rs-toolbar-right">
 								<div class="toolbar-share-icon">
 									<ul>
-										<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-										<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-										<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-										<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+										<li><a href="https://www.youtube.com/channel/UCYjdpIBFB96whi626TqS0Qg"><i class="fa fa-facebook"></i></a></li>
+										<li><a href="https://www.youtube.com/channel/UCYjdpIBFB96whi626TqS0Qg"><i class="fa fa-youtube-play"></i></a></li>
+										<li><a href="https://www.google.com/search?gs_ssp=eJzj4tZP1zcsSTE0LDCrNGC0UjWoMLZMs7BMsUhJMktJsUxNSrMyqEhKTUo2NkgxTrMwtTBLMUjxEiwuUcjLzMtMzCtWKE7OyM_PAQDyKBZB&q=st+ninians+school&oq=st+ninians+&aqs=chrome.1.69i57j46i39i175i199j0j46i175i199l2j69i60l3.3966j0j7&sourceid=chrome&ie=UTF-8"><i class="fa fa-google"></i></a></li>
+										{{-- <li><a href="#"><i class="fa fa-linkedin"></i></a></li> --}}
 									</ul>
                                 </div>
                                 @auth
@@ -54,7 +54,7 @@
 							</div>
 							<div class="col-md-4 col-sm-12">
 								<div class="logo-area text-center">
-									<a href="{{ route('website.index') }}"><img src="{{ asset('website-assets/images/logo.png') }}" alt="logo"></a>
+									<a href="{{ route('website.index') }}"><img src="{{ asset('storage/'.$school_info->image) }}" alt="logo"></a>
 								</div>
 							</div>
 							<div class="col-md-4 col-sm-12">
@@ -113,9 +113,20 @@
                                             @endguest
 
                                             @auth
-                                            <li> <a href="{{ route('website.student-dashboard') }}">Dashboard</a></li>
 
-                                            <li> <a href="{{ route('website.admission-form') }}">Admission FOrm</a></li>
+                                            <li> <a href="{{ route('website.index') }}">Home</a></li>
+
+                                            <li> <a href="{{ route('website.about') }}">About Us</a></li>
+
+                                            <li> <a href="{{ route('website.prospectus') }}">Prospectus</a></li>
+
+                                            <li> <a href="{{ route('website.gallery') }}">Gallery</a></li>
+
+                                            <li> <a href="{{ route('website.contact') }}">Contact</a></li>
+
+                                            <li> <a href="{{ route('website.admission-form') }}">Admission Form</a></li>
+
+                                            <li> <a href="{{ route('website.student-dashboard') }}">Dashboard</a></li>
                                             @endauth
 
 										</ul>

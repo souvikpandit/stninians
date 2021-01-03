@@ -7,7 +7,11 @@
             <div class="card">
                 {{-- <div class="card-header">{{ __('Login') }}</div> --}}
                 <div class="card-header" style="background-color: white">
-                    <img src="{{ asset('website-assets/images/logo.png') }}" alt="" srcset="" style="margin-left: 30%">
+                    <div class="container">
+                        <div class="col-md-12" style="text-align:center">
+                            <img src="{{ asset('storage/'.$school_info->image) }}" alt="">
+                        </div>
+                    </div>
                 </div>
 
                 <div class="card-body">

@@ -9,7 +9,7 @@
 		                    <h1 class="page-title">Contact</h1>
 		                    <ul>
 		                        <li>
-		                            <a class="active" href="index.html">Home</a>
+		                            <a class="active" href="{{ route('website.index') }}">Home</a>
 		                        </li>
 		                        <li>Cantact</li>
 		                    </ul>

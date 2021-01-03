@@ -21,8 +21,14 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="emailid">Email ID</label>
-                                    <input type="email" name="email" id="emailid" class="form-control">
+                                    <input type="email" name="email" id="emailid" class="form-control" onblur="verifyEmail(this.value)">
                                 </div>
+
+                                {{-- <div class="form-group" id="otp_div" style="display:none">
+                                    <label for="OTP">Enter OTP</label>
+                                    <input type="email" name="otp" id="otp" class="form-control">
+                                </div> --}}
+
                                 <div class="form-group">
                                     <label for="password">Password</label>
                                     <input type="password" name="password" id="password" class="form-control">
@@ -60,3 +66,23 @@
         </div>
         <!-- Vision End -->
 @endsection
+{{-- <script>
+
+    function verifyEmail(email) {
+        document.getElementById('otp_div').style.display='block';
+
+        $.ajax({
+        url: "getOtpAjax",
+        type: "get",
+        data: email ,
+        success: function (response) {
+            document.getElementById("otp_div").innerHTML = response;
+           // You will get response from your PHP page (what you echo or print)
+        },
+        error: function() {
+           console.log("Fail");
+        }
+    });
+    }
+
+</script> --}}

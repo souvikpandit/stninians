@@ -19,17 +19,29 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>ST-2021-000001</td>
-                            <td>Sonam Basu</td>
-                            <td>Rahul Basu</td>
-                            <td>986543210</td>
-                            <td>KG-II</td>
-                            <td>20-SEP-2020</td>
-                            <td>
-                                <a href="{{ route('admission.admission_details') }}" class="btn btn-danger">View Details</a>
-                            </td>
-                        </tr>
+                        @forelse ($prayukty_admissions as $prayukty_admission)
+                            <tr>
+                                <td>{{ $prayukty_admission->student_id }}</td>
+                                <td>{{ $prayukty_admission->user->name }}</td>
+                                <td>{{ $prayukty_admission->student_father_name }}</td>
+                                <td>{{ $prayukty_admission->student_phone_number }}</td>
+                                <td>{{ $prayukty_admission->student_class }}</td>
+                                    @php
+                                        $dates = date_format($prayukty_admission->created_at, "j M , Y, g:i a");
+                                    @endphp
+                                <td>{{ $dates }}</td>
+                                <td>
+                                    <form action="{{ route('admission.admission_details') }}" method="POST">
+                                        @csrf
+                                        <input type="hidden" name="student_id" value="{{ $prayukty_admission->student_id }}">
+                                        <input type="submit" value="View Details" class="btn btn-danger">
+                                    </form>
+                                </td>
+                            </tr>
+                        @empty
+
+                        @endforelse
+
                     </tbody>
                 </table>
             </div>

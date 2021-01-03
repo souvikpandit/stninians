@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5e3adb0ace9eeed4c5610ed74967a616",
+    "content-hash": "4a24179d1fa3b09dc5e701abd0162215",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2078,6 +2078,55 @@
             "time": "2020-12-04T02:51:30+00:00"
         },
         {
+            "name": "rahulreghunath/textlocal",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rahulreghunath/Textlocal.git",
+                "reference": "5ec529463616517a5d26d396f9192b214b3994c4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rahulreghunath/Textlocal/zipball/5ec529463616517a5d26d396f9192b214b3994c4",
+                "reference": "5ec529463616517a5d26d396f9192b214b3994c4",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5.9"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Rahulreghunath\\Textlocal\\ServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Rahulreghunath\\Textlocal\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Rahul Reghunath",
+                    "email": "reghunath11@gmail.com",
+                    "role": "developer"
+                }
+            ],
+            "description": "Textlocal sms gateway wrapper for Laravel",
+            "keywords": [
+                "laravel",
+                "sms gateway",
+                "textlocal"
+            ],
+            "time": "2019-02-07T10:50:11+00:00"
+        },
+        {
             "name": "ralouphie/getallheaders",
             "version": "3.0.3",
             "source": {
@@ -2272,6 +2321,65 @@
                 }
             ],
             "time": "2020-08-18T17:17:46+00:00"
+        },
+        {
+            "name": "softon/indipay",
+            "version": "v1.2.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/softon/indipay.git",
+                "reference": "1ce64ec34212c8be0146a5e1b62e7b27409c45fd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/softon/indipay/zipball/1ce64ec34212c8be0146a5e1b62e7b27409c45fd",
+                "reference": "1ce64ec34212c8be0146a5e1b62e7b27409c45fd",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "~5.0|~6.0|^7.0",
+                "illuminate/support": "~5.6.0|~5.7.0|~5.8.0|^6.0|^7.0|^8.0",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Softon\\Indipay\\IndipayServiceProvider"
+                    ],
+                    "aliases": {
+                        "Indipay": "Softon\\Indipay\\Facades\\Indipay"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Softon\\Indipay\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Shiburaj",
+                    "email": "powerupneo@gmail.com"
+                }
+            ],
+            "description": "The Laravel 5+ Package for Indian Payment Gateways. Currently supported gateways: CCAvenue, PayUMoney, EBS, CitrusPay, InstaMojo, ZapakPay, Paytm, Mocker.",
+            "keywords": [
+                "CitrusPay",
+                "Indian Payment Gateways",
+                "ccavenue",
+                "ebs",
+                "instamojo",
+                "laravel 5",
+                "mocker",
+                "paytm",
+                "payumoney"
+            ],
+            "time": "2020-09-23T09:46:49+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",

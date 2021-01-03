@@ -9,7 +9,7 @@
 		                    <h1 class="page-title">OUR COURSES</h1>
 		                    <ul>
 		                        <li>
-		                            <a class="active" href="index.html">Home</a>
+		                            <a class="active" href="{{ route('website.index') }}">Home</a>
 		                        </li>
 		                        <li>Our Courses</li>
 		                    </ul>

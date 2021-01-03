@@ -11,7 +11,7 @@
 		                    <h1 class="page-title">About Us</h1>
 		                    <ul>
 		                        <li>
-		                            <a class="active" href="index.html">Home</a>
+		                            <a class="active" href="{{ route('website.index') }}">Home</a>
 		                        </li>
 		                        <li>About Us</li>
 		                    </ul>
@@ -81,7 +81,7 @@
                     <div class="col-lg-6 col-md-12">
                     	<div class="row">
                     		@if ($about)
-                                <div class="col-lg-6 col-md-12 rs-vertical-bottom mobile-mb-50">
+                                <div class="col-lg-12 col-md-12 rs-vertical-bottom mobile-mb-50">
                                     <a href="#">
                                         <img src="{{ asset('storage/'.$about->getMetaDetails($about->id,'mission_image')) }}" alt="Mission Image">
                                     </a>
@@ -106,24 +106,28 @@
             <div class="container">
                 <div class="row">
                     @if ($about)
-                        <div class="col-lg-6 col-md-12 rs-vertical-bottom mobile-mb-50">
-                            <a href="#">
-                                <img src="{{ asset('storage/'.$about->getMetaDetails($about->id,'vision_image')) }}" alt="Mission Image">
-                            </a>
+                        <div class="col-lg-6 col-md-12 mobile-mb-50">
+                            <div class="vision-img rs-animation-hover">
+                                <img src="{{ asset('storage/'.$about->getMetaDetails($about->id,'vision_image')) }}" alt="Vision">
+                                <a class="popup-youtube rs-animation-fade" href="{{ $about->getMetaDetails($about->id,'video_link') }}" title="Video Icon">
+                                </a>
+                                <div class="overly-border"></div>
+                            </div>
                         </div>
                     @else
                         <div class="col-lg-6 col-md-12 rs-vertical-bottom mobile-mb-50">
-                            <a href="#">
+
                                 <img src="{{ asset(GetDefaultImage()) }}" alt="Mission Image">
-                            </a>
                         </div>
+
                     @endif
+
                     <div class="col-lg-6 col-md-12">
 		                <div class="abt-title">
 		                    <h2>OUR VISION</h2>
 		                </div>
                     	@if ($about)
-                            <div class="about-desc">
+                            <div class="vision-desc">
                 			    <p>{{ $about->getMetaDetails($about->id,'vision') }}</p>
                     	    </div>
                         @else

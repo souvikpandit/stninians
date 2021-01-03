@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\Website;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class WebsiteController extends Controller
 {
@@ -27,9 +28,18 @@ class WebsiteController extends Controller
     {
         return view('website.contact');
     }
+    public function privacy(Type $var = null)
+    {
+        return view('website.privacy');
+    }
+    public function terms(Type $var = null)
+    {
+        return view('website.terms');
+    }
     public function admissionForm(Type $var = null)
     {
-        return view('website.admission-form');
+        $student_form_details = PrayuktySelectOne('App\Models\student\Student','user_id',Auth::User()->id);
+        return view('website.admission-form', compact('student_form_details'));
     }
     public function admissionDashboard(Type $var = null)
     {
@@ -39,4 +49,10 @@ class WebsiteController extends Controller
     {
         return view('website.login');
     }
+    public function getOtpAjax()
+    {
+        $email = $_GET['data'];
+        echo $email;
+    }
+
 }
